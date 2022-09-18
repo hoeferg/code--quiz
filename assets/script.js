@@ -2,6 +2,8 @@ const generateBtn = document.querySelector("#generate-quiz");
 const startCard = document.querySelector("#start-quiz");
 const questionCard = document.querySelector("#question");
 const $time = document.querySelector(".time")
+const submitAnswer = document.querySelector("questions")
+
 let questions = [
     {
         title: "Commonly used data types DO NOt include:",
@@ -39,8 +41,33 @@ function generateQuiz() {
     startCard.setAttribute("style","display:none")
 }
 
+function setTime() {
+    const timerInterval = setInterval (function() {
+        secondsLeft--;
+        $time.textContent = secondsLeft + "Time:"
+
+        if(secondsLeft === 0) {
+            clearInterval(timerInterval);
+            sendMessage();
+        }
+    },5000);
+}
 
 
+
+function 
+    
+}
+
+let submitAnswer = function() {
+    let answer = document.getElementsByName('#question');
+    let value= "";
+    for ('value i = 0, length =questions.length; i <length; i++'); {
+        if (answer[i].checked) {
+            val = answer[i].value;
+        }
+    }
+}
 // need start button to interact when clicked. It needs to start a timer and presents with a timer
 
 // A way to tell when the answer is right or wrong
@@ -53,3 +80,4 @@ function generateQuiz() {
 
 // Then you need to put your initials and save score
 generateBtn.addEventListener("click", generateQuiz);
+$time.addEventListener("click", setTime);

@@ -1,10 +1,17 @@
 * {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 26px;
+    background-color: aqua;
  
 }
 
 body{
-    border: purple thin solid;
+    border: black;
     text-align: center;
+    background-color: rgb(68, 0, 255);
+    border-radius: 10em;
+}
+
+button{
+    box-shadow: 5px 7px grey;
 }
