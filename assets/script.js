@@ -3,7 +3,7 @@ const startCard = document.querySelector("#start-quiz");
 const questionCard = document.querySelector("#question");
 const $time = document.querySelector(".time");
 const $submitAnswer = document.querySelector("#next");
-let secondsLeft = 5000
+let secondsLeft = 59
 
 let questions = [
     {
