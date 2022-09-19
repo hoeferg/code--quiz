@@ -1,8 +1,9 @@
 const generateBtn = document.querySelector("#generate-quiz");
 const startCard = document.querySelector("#start-quiz");
 const questionCard = document.querySelector("#question");
-const $time = document.querySelector(".time")
-const submitAnswer = document.querySelector("questions")
+const $time = document.querySelector(".time");
+const $submitAnswer = document.querySelector("#next");
+let secondsLeft = 5000
 
 let questions = [
     {
@@ -39,6 +40,7 @@ let questions = [
 
 function generateQuiz() {
     startCard.setAttribute("style","display:none")
+    setTime()
 }
 
 function setTime() {
@@ -55,14 +57,12 @@ function setTime() {
 
 
 
-function 
-    
-}
+
 
 let submitAnswer = function() {
     let answer = document.getElementsByName('#question');
-    let value= "";
-    for ('value i = 0, length =questions.length; i <length; i++'); {
+    let length =questions.length;
+    for (var i = 0; i <length; i++); {
         if (answer[i].checked) {
             val = answer[i].value;
         }
@@ -80,4 +80,3 @@ let submitAnswer = function() {
 
 // Then you need to put your initials and save score
 generateBtn.addEventListener("click", generateQuiz);
-$time.addEventListener("click", setTime);
