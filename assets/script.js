@@ -3,7 +3,6 @@ const startCard = document.querySelector("#start-quiz");
 const questionCard = document.querySelector("#question");
 const $time = document.querySelector(".time");
 const $submitAnswer = document.querySelector("#next");
-let secondsLeft = 59
 
 let questions = [
     {
@@ -40,23 +39,24 @@ let questions = [
 
 function generateQuiz() {
     startCard.setAttribute("style","display:none")
+    $time.setAttribute("style","display:block")
     setTime()
 }
 
 function setTime() {
+    let secondsLeft = 101
     const timerInterval = setInterval (function() {
         secondsLeft--;
-        $time.textContent = secondsLeft + "Time:"
-
+        $time.textContent = "Time: " + secondsLeft + " seconds"; 
         if(secondsLeft === 0) {
             clearInterval(timerInterval);
-            sendMessage();
+            return;
         }
-    },5000);
+    },1000);
 }
 
 
-
+// function sendMessage
 
 
 let submitAnswer = function() {

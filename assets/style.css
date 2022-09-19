@@ -15,3 +15,7 @@ body{
 button{
     box-shadow: 5px 7px grey;
 }
+
+.time {
+    text-align: right;
+}
