@@ -6,8 +6,9 @@
 }
 
 body{
-    border: black;
+    border: black thick;
     text-align: center;
+    border-color: black;
     border-radius: 10em;
 }
 
