@@ -3,10 +3,11 @@ const startCard = document.querySelector("#start-quiz");
 const $time = document.querySelector(".time");
 const $submitAnswer = document.querySelector("#next");
 const questionDiv = document.querySelector("#question");
+const $score = document.querySelector("#score")
 let questionCard = 0
 let secondsLeft = 101
 let timerInterval;
-
+// let $score = timerInterval
 
 let questions = [
     {
@@ -87,24 +88,29 @@ function submitAnswer() {
     console.log(this.dataset.value)
     if (questionCard < questions.length) {
         render()
-    if (this.dataset.value === questions[questionCard].answer) {
-    }
-        questionCard++
-        if (secondsLeft === 0 || questionCard === questions.length - 1) {
-            quizEnd()
+        if (this.dataset.value === questions[questionCard].answer) {
+
+            questionCard++
+            if (secondsLeft === 0 || questionCard === questions.length - 1) {
+                quizEnd()
+                displayMessage()
+            }
         }
-    }
-    else {
-        secondsLeft = secondsLeft - 5
-        if (secondsLeft === 0) {
-            quizEnd()
+        else {
+            secondsLeft = secondsLeft - 5
+            if (secondsLeft === 0) {
+                quizEnd()
+                displayMessage()
+            }
         }
     }
 }
-
-function score() {
+function displayMessage() {
     let score = secondsLeft
-    alert("Your score is" + score + "!")
+    // alert("Your score is " + score + "!")
+    questionDiv.setAttribute("style", "display:none")
+    document.getElementById("score").innerHTML = secondsLeft
+    $score.setAttribute("style", "display:block")
 }
 
 
@@ -128,4 +134,3 @@ generateBtn.addEventListener("click", generateQuiz);
 // When all the questions are answered or timer reaches 0 then the game is over
 
 // Then you need to put your initials and save score
-
