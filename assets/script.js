@@ -45,6 +45,7 @@ let questions = [
 function generateQuiz() {
     startCard.setAttribute("style", "display:none")
     $time.setAttribute("style", "display:block")
+    generateBtn.setAttribute("style", "display:none")
     setTime()
     render()
 }
@@ -107,9 +108,8 @@ function submitAnswer() {
 }
 function displayMessage() {
     let score = secondsLeft
-    // alert("Your score is " + score + "!")
     questionDiv.setAttribute("style", "display:none")
-    document.getElementById("score").innerHTML = secondsLeft
+    document.getElementById("score").innerHTML =`Your score is ${score}`
     $score.setAttribute("style", "display:block")
 }
 
