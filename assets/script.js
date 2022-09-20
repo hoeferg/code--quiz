@@ -85,12 +85,14 @@ function quizEnd() {
 
 function submitAnswer() {
     console.log(this.dataset.value)
+    if (questionCard < questions.length) {
+        render()
     if (this.dataset.value === questions[questionCard].answer) {
+    }
         questionCard++
         if (secondsLeft === 0 || questionCard === questions.length - 1) {
             quizEnd()
         }
-        render()
     }
     else {
         secondsLeft = secondsLeft - 5
@@ -103,7 +105,7 @@ function submitAnswer() {
 function score() {
     let score = secondsLeft
     alert("Your score is" + score + "!")
-} 
+}
 
 
 generateBtn.addEventListener("click", generateQuiz);
