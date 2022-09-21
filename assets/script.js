@@ -1,13 +1,22 @@
 const generateBtn = document.querySelector("#generate-quiz");
+// This generates the quiz when the button is pushed
 const startCard = document.querySelector("#start-quiz");
+// This is not used anywhere at this moment
 const $time = document.querySelector(".time");
+// This is used to start and stop the timer
 const $submitAnswer = document.querySelector("#next");
+// This was for the next button. It is currently not being used
 const questionDiv = document.querySelector("#question");
+// The question cards
 const $score = document.querySelector("#score")
+// The time left at the end 
 let questionCard = 0
+// sets the array value
 let secondsLeft = 101
+// Sets the time for the questions
 let timerInterval;
 // let $score = timerInterval
+// not sure if this is needed
 
 let questions = [
     {
@@ -41,6 +50,7 @@ let questions = [
         answer: "console.log"
     },
 ]
+// list of questions
 
 function generateQuiz() {
     startCard.setAttribute("style", "display:none")
@@ -49,7 +59,7 @@ function generateQuiz() {
     setTime()
     render()
 }
-
+// Once the quiz is started this sets the start page to inviable, shows the time and hides the start button
 
 function setTime() {
     timerInterval = setInterval(function () {
@@ -61,6 +71,7 @@ function setTime() {
         }
     }, 1000);
 }
+// This sets the time for the quiz. Time is subtracted when the set interval function is called. When the time equals 0 the function stops.
 
 function render() {
     questionDiv.innerHTML = "";
@@ -74,15 +85,14 @@ function render() {
         questionDiv.appendChild(choiceButton)
     }
 }
-
+// This allows the questions to switch. It creates a loop that creates a button that will have the possible answers. When the button is clicked, it activates the submit answers function. 
 
 // function sendMessage
 
 function quizEnd() {
     clearInterval(timerInterval);
-
-
 }
+// This clears the time when the quiz end function is called
 
 
 function submitAnswer() {
@@ -90,12 +100,14 @@ function submitAnswer() {
     if (questionCard < questions.length) {
         render()
         if (this.dataset.value === questions[questionCard].answer) {
-
+// This allows the question to rotate through till all the questions are shown.
+}
             questionCard++
             if (secondsLeft === 0 || questionCard === questions.length - 1) {
                 quizEnd()
                 displayMessage()
             }
+            // This makes the game end when the timer = 0 or there are no more cards.
         }
         else {
             secondsLeft = secondsLeft - 5
@@ -103,6 +115,7 @@ function submitAnswer() {
                 quizEnd()
                 displayMessage()
             }
+        // This takes away 5 seconds when the question is wrong
         }
     }
 }
@@ -112,14 +125,12 @@ function displayMessage() {
     document.getElementById("score").innerHTML =`Your score is ${score}`
     $score.setAttribute("style", "display:block")
 }
-
+// This displays the score at the end of the game
 
 generateBtn.addEventListener("click", generateQuiz);
-// localStorage.setItem("highScore", 0);
+// This is the activtor that trigger the game to start.
 
-// if (score > parseInt(localStorage.getItem("hightScore"))) {
-//     localStorage.setItem("hightScore", score);
-// }
+
 
 
 
