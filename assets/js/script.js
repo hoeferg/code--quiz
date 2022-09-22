@@ -140,17 +140,15 @@ function displayMessage() {
 
 function formSubmit() {
     console.log("formSubmit")
-    let $input = document.querySelector("form")[0];
-    const highScore = { score: $runningTime, initials: $input.value };
+    let $input = document.querySelector("input");
+    const highScore = { score: secondsLeft, initials: $input.value };
     let highScoreCloudInfo = JSON.parse(localStorage.getItem("highScoreInfo")) || []
     highScoreCloudInfo.push(highScore);
-    localStorage.setItem("highScoreInfo", JSON.stringify(highScoreCloudInfo));
+    localStorage.setItem("highScoreInfo", JSON.stringify(highScore));
 }
 //  saves form information to local memory
 
-submitBtn.addEventListener('click', function () {
-    console.log("submit")
-});
+submitBtn.addEventListener('click', formSubmit);
 // submit forms to high scores
 generateBtn.addEventListener("click", generateQuiz);
 // This is the activator that trigger the game to start.
