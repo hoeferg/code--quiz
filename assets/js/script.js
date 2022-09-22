@@ -11,6 +11,7 @@ const questionDiv = document.querySelector("#question");
 const $score = document.querySelector("#score")
 // The time left at the end 
 const $form = document.querySelector("#form")
+const submitBtn = document.getElementById("button")
 let questionCard = 0
 // sets the array value
 let secondsLeft = 101
@@ -19,9 +20,12 @@ let timerInterval;
 // let $score = timerInterval
 // not sure if this is needed
 
+
+
+
 let questions = [
     {
-        topic: "What are we learning",
+        topic: "What are we learning?",
         choices: ["JavaScript", "HTML", "CSS", "all the above"],
         answer: "all the above"
     },
@@ -120,8 +124,8 @@ function submitAnswer() {
     }
 }
 
-// function localStorageHandler() {
-//     // update the current score list in LocalStorage because the value has changed
+//  function localStorageHandler() {
+// update the current score list in LocalStorage because the value has changed
 //     localStorage.setItem(`score`, JSON.stringify(secondsLeft));
 // }
 
@@ -129,26 +133,27 @@ function displayMessage() {
     let score = secondsLeft
     questionDiv.setAttribute("style", "display:none");
     document.getElementById("score").innerHTML = `Your score is ${score}`
-    $score.setAttribute("style", "display:block");
-    $form.setAttribute("style", "display:block");
-    // localStorageHandler();
+    $score.removeAttribute("class");
+    $form.removeAttribute("class");
 }
 // This displays the score at the end of the game
 
-// function formSubmit(event) {
-//     let $input = document.querySelector("form")[0];
-//     const highScore = { score: $runningTime, initials: $input.value };
-//     let highScoreCloudInfo = JSON.parse(localStorage.getItem("highScoreInfo")) || []
-//     highScoreCloudInfo.push(highScore);
-//     localStorage.setItem("highScoreInfo", JSON.stringify(highScoreCloudInfo));
-//     event.preventDefault();
-// }
-// saves form information to local memory
+function formSubmit() {
+    console.log("formSubmit")
+    let $input = document.querySelector("form")[0];
+    const highScore = { score: $runningTime, initials: $input.value };
+    let highScoreCloudInfo = JSON.parse(localStorage.getItem("highScoreInfo")) || []
+    highScoreCloudInfo.push(highScore);
+    localStorage.setItem("highScoreInfo", JSON.stringify(highScoreCloudInfo));
+}
+//  saves form information to local memory
 
-addEventListener('submit', formSubmit);
+submitBtn.addEventListener('click', function () {
+    console.log("submit")
+});
 // submit forms to high scores
 generateBtn.addEventListener("click", generateQuiz);
-// This is the activtor that trigger the game to start.
+// This is the activator that trigger the game to start.
 
 
 

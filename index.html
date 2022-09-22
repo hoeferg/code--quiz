@@ -1,42 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel = "stylesheet" href="./assets/style.css">
-    <script defer src="./assets/script.js"></script>
-    <title>Code Quiz</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./assets/style.css">
+  <title>Code Quiz</title>
 </head>
+
 <body>
-    <p class="time" style="display:none" >Time: 100 seconds</p>
-    <!-- This is the timer -->
-    <h1>Code Quiz Challenge</h1> 
-        <p id ="start-quiz">Try to answer the following code-related question within the time limit. Keep in mind that incorrect will reduce your time by 15 seconds. </p>
-        <!-- This is the start screen -->
-        <div id ="question"></div>
-        <!-- This creates a section for the question cards -->
-        <h2 class="time" style="text-align:left;"></h2>
-        <h3 class="highscore" style="text-align:right;"><a href="highscore.html">High Scores</a></h3>
+  <p class="time" style="display:none">Time: 100 seconds</p>
+  <!-- This is the timer -->
+  <h1>Code Quiz Challenge</h1>
+  <p id="start-quiz">Try to answer the following code-related question within the time limit. Keep in mind that
+    incorrect will reduce your time by 15 seconds. </p>
+  <!-- This is the start screen -->
+  <div id="question"></div>
+  <!-- This creates a section for the question cards -->
+  <h2 class="time" style="text-align:left;"></h2>
+  <h3 class="highscore" style="text-align:right;"><a href="highscore.html">High Scores</a></h3>
 
-        <button id ="generate-quiz">Start Button</button>
-        <!-- This is the timer -->
-    <header id = score style="display:none"> Your score is</header>
-    <!-- This is the score shown at the end -->
-    <form id = form style="display:none">
+  <button id="generate-quiz">Start Quiz</button>
+  <!-- This is the timer -->
+  <header id="score" class="hide"> Your score is</header>
+  <!-- This is the score shown at the end -->
+  <div id="form" class="hide">
     <div class="mb-3">
-      <label for="Initials" class="form-label">Your Initials: </label>
-      <input type="Initials" class="form-control" id="AB" aria-describedby="emailHelp">
+      <p>Your Initials: </p>
+      <input type="text" />
+      <button id="button">submit</button>
     </div>
-    <!-- This div allows you to enter your initals -->
-    <div class="mb-3">
-      <label for="score" class="form-label">Score</label>
-      <input type="score" class="form-control" id="scoreInput">
-    </div>
+    <!-- This div allows you to enter your initials -->
     <!-- This is where the score goes -->
-    <button type="submitBtn" class="btn btn-primary">Submit</button>
-    <!-- This is the submit button for the scores.  -->
-  </form>
-
+  </div>
+  <script src="./assets/js/script.js"></script>
 </body>
+
 </html>
