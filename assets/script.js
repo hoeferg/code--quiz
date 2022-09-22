@@ -10,6 +10,7 @@ const questionDiv = document.querySelector("#question");
 // The question cards
 const $score = document.querySelector("#score")
 // The time left at the end 
+const $form = document.querySelector("#form")
 let questionCard = 0
 // sets the array value
 let secondsLeft = 101
@@ -118,15 +119,27 @@ function submitAnswer() {
         // This takes away 5 seconds when the question is wrong
         }
     }
-}
+
 function displayMessage() {
     let score = secondsLeft
     questionDiv.setAttribute("style", "display:none")
     document.getElementById("score").innerHTML =`Your score is ${score}`
     $score.setAttribute("style", "display:block")
+    $form.setAttribute("style", "display:block")
 }
 // This displays the score at the end of the game
 
+function formSubmit () {
+    let $input =document.querySelector("form")[0];
+    const highScore = {score: $runningTime, initials: $input.value};
+    let highScoreCloudInfo =  JSON.parse(localStorage.getItem("highScoreInfo")) || []
+    highScoreCloudInfo.push(highScore);
+    localStorage.setItem("highScoreInfo", JSON.stringify(highScoreCloudInfo));
+}
+// saves form information to local memory
+
+addEventListener('submit', formSubmit);
+// submit forms to highscore
 generateBtn.addEventListener("click", generateQuiz);
 // This is the activtor that trigger the game to start.
 

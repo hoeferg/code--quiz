@@ -17,11 +17,13 @@
         <div id ="question"></div>
         <!-- This creates a section for the question cards -->
         <h2 class="time" style="text-align:left;"></h2>
-        <button id="generate-quiz">Start Button</button>
+        <h3 class="highscore" style="text-align:right;"><a href=.highscore.html>High Scores</a></h3>
+
+        <button id ="generate-quiz">Start Button</button>
         <!-- This is the timer -->
     <header id = score style="display:none"> Your score is</header>
     <!-- This is the score shown at the end -->
-    <form id = form>
+    <form id = form style="display:none">
     <div class="mb-3">
       <label for="Initials" class="form-label">Your Initials: </label>
       <input type="Initials" class="form-control" id="AB" aria-describedby="emailHelp">
@@ -32,7 +34,7 @@
       <input type="score" class="form-control" id="scoreInput">
     </div>
     <!-- This is where the score goes -->
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submitBtn" class="btn btn-primary">Submit</button>
     <!-- This is the submit button for the scores.  -->
   </form>
 
