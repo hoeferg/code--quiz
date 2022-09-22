@@ -129,12 +129,13 @@ function displayMessage() {
 }
 // This displays the score at the end of the game
 
-function formSubmit () {
+function formSubmit(event) {
     let $input =document.querySelector("form")[0];
     const highScore = {score: $runningTime, initials: $input.value};
     let highScoreCloudInfo =  JSON.parse(localStorage.getItem("highScoreInfo")) || []
     highScoreCloudInfo.push(highScore);
     localStorage.setItem("highScoreInfo", JSON.stringify(highScoreCloudInfo));
+    event.preventDefault();
 }
 // saves form information to local memory
 
