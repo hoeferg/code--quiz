@@ -102,24 +102,24 @@ function quizEnd() {
 
 function submitAnswer() {
     console.log(this.dataset.value)
-    if (questionCard < questions.length) {
-        render()
-        if (this.dataset.value === questions[questionCard].answer) {
-            // This checks if tha answer is right
-        }
+
+    if (this.dataset.value === questions[questionCard].answer) {
+        // This checks if tha answer is right
+
         questionCard++
         if (secondsLeft === 0 || questionCard === questions.length - 1) {
             quizEnd()
             displayMessage()
         }
-        // This makes the game end when the timer = 0 or there are no more cards.
-    }
+        render ()
+    }// This makes the game end when the timer = 0 or there are no more cards.
     else {
         secondsLeft = secondsLeft - 5
         if (secondsLeft === 0) {
             quizEnd()
             displayMessage()
         }
+
         // This takes away 5 seconds when the question is wrong
     }
 }
