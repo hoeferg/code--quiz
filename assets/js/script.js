@@ -22,7 +22,6 @@ let timerInterval;
 
 
 
-
 let questions = [
     {
         topic: "What are we learning?",
@@ -139,18 +138,18 @@ function displayMessage() {
 // This displays the score at the end of the game
 
 function formSubmit() {
+    let highScoreCloudInfo = JSON.parse(localStorage.getItem("highScoreCloudInfo")) || []
     console.log("formSubmit")
     let $input = document.querySelector("input");
     const highScore = { score: secondsLeft, initials: $input.value };
-    let highScoreCloudInfo = JSON.parse(localStorage.getItem("highScoreInfo")) || []
     highScoreCloudInfo.push(highScore);
-    localStorage.setItem("highScoreInfo", JSON.stringify(highScore));
+    localStorage.setItem("highScoreCloudInfo", JSON.stringify(highScoreCloudInfo));
 }
 //  saves form information to local memory
 
 submitBtn.addEventListener('click', formSubmit);
 // submit forms to high scores
-generateBtn.addEventListener("click", generateQuiz);
+generateBtn.addEventListener('click', generateQuiz);
 // This is the activator that trigger the game to start.
 
 
