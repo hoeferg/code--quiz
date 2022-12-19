@@ -24,7 +24,7 @@ let timerInterval;
 
 let questions = [
     {
-        topic: "What are we learning?",
+        topic: "What type of code are we learning?",
         choices: ["JavaScript", "HTML", "CSS", "all the above"],
         answer: "all the above"
     },
