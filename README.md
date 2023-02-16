@@ -2,13 +2,6 @@
 
 ![Screenshot](assets/images/code-quiz-ss.png)
 
-## Table of Contents  
-* [Description](##Description)  
-* [Installation](##Installation)  
-* [License](##License)  
-* [Usage](##Usage)  
-* [Contact](##Contact)  
-
 
 ## Description
 
